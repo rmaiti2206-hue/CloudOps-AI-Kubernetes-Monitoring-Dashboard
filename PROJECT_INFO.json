@@ -1,0 +1,10 @@
+{
+  "project": "CloudOps-AI Kubernetes Monitoring Dashboard",
+  "student": "Rajdeep Maiti",
+  "student_id": "25MCC20007",
+  "version": "2.0.0",
+  "ai": "rule-based diagnostic and resource optimization engine",
+  "real_kubernetes": "supported via Kubernetes Python client",
+  "metrics": "Prometheus-ready",
+  "database": "PostgreSQL-ready"
+}

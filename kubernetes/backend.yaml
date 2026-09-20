@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: cloudops-backend, namespace: cloudops-ai}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: cloudops-backend}}
+  template:
+    metadata: {labels: {app: cloudops-backend}}
+    spec:
+      serviceAccountName: cloudops-monitor
+      containers:
+      - name: backend
+        image: cloudops-backend:latest
+        ports: [{containerPort: 8000}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: cloudops-backend, namespace: cloudops-ai}
+spec:
+  selector: {app: cloudops-backend}
+  ports: [{port: 8000,targetPort: 8000}]
